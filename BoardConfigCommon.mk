@@ -21,6 +21,9 @@ VENDOR_PATH := device/xiaomi/msm8996-common
 
 TARGET_SPECIFIC_HEADER_PATH := $(VENDOR_PATH)/include
 
+BOARD_HARDWARE_CLASS += \
+    $(VENDOR_PATH)/cmhw
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
