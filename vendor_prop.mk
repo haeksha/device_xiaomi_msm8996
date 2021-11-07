@@ -57,6 +57,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
+    media.camera.ts.monotonic=0 \
+    persist.camera.eis.enable=1 \
+    persist.camera.HAL3.enabled=1 \
     persist.camera.gyro.disable=0 \
     persist.camera.imglib.fddsp=1
 
@@ -113,7 +116,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.vidc.enc.disable.pq=true \
     vendor.video.disable.ubwc=1 \
-    vidc.enc.dcvs.extra-buff-count=2
+    vidc.enc.dcvs.extra-buff-count=2 \
+    mm.enable.sec.smoothstreaming=true
 
 # Memory optimizations
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -129,10 +133,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.extension_library=libqti-perfd-client.so \
     ro.vendor.qti.sys.fw.bg_apps_limit=60
 
-# Priv-app permissions whitelist
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.control_privapp_permissions=enforce
-
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
     DEVICE_PROVISIONED=1 \
@@ -143,6 +143,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.default_network=20,20 \
     persist.data.qmi.adb_logmask=0 \
     persist.net.doxlat=true \
+    persist.radio.add_power_save=1 \
     persist.radio.apm_sim_not_pwdn=1 \
     persist.radio.force_on_dc=true \
     persist.radio.multisim.config=dsds \
@@ -166,6 +167,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # TimeService
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.timed.enable=true
+
+# Touch response
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.qti.inputopts.enable=true \
+    persist.vendor.qti.inputopts.movetouchslop=0.6
 
 # USB
 PRODUCT_PROPERTY_OVERRIDES += \
