@@ -42,7 +42,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.safx.pbe.enabled=true \
     vendor.audio.tunnel.encode=false \
     vendor.voice.path.for.pcm.voip=true \
-    vendor.audio.use.dts_eagle=true
+    vendor.audio.use.dts_eagle=true \
+    use.dts_eagle=true \
+    hpx_send_params=1
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
