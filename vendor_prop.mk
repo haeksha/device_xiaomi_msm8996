@@ -57,6 +57,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
+    media.camera.ts.monotonic=0 \
+    persist.camera.eis.enable=1 \
+    persist.camera.HAL3.enabled=1 \
     persist.camera.gyro.disable=0 \
     persist.camera.imglib.fddsp=1
 
@@ -113,11 +116,18 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.dbg.volte_avail_ovr=1 \
     persist.dbg.vt_avail_ovr=1
 
+# IORap
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.iorapd.enable=true \
+    iorapd.perfetto.enable=true \
+    iorapd.readahead.enable=true
+
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.vidc.enc.disable.pq=true \
     vendor.video.disable.ubwc=1 \
-    vidc.enc.dcvs.extra-buff-count=2
+    vidc.enc.dcvs.extra-buff-count=2 \
+    mm.enable.sec.smoothstreaming=true
 
 # Memory optimizations
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -166,6 +176,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # TimeService
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.timed.enable=true
+
+# Touch response
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.qti.inputopts.enable=true \
+    persist.vendor.qti.inputopts.movetouchslop=0.6
 
 # USB
 PRODUCT_PROPERTY_OVERRIDES += \
