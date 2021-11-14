@@ -133,6 +133,9 @@ DEVICE_FRAMEWORK_MANIFEST_FILE := $(VENDOR_PATH)/framework_manifest.xml
 DEVICE_MANIFEST_FILE := $(VENDOR_PATH)/manifest.xml
 DEVICE_MATRIX_FILE := $(VENDOR_PATH)/compatibility_matrix.xml
 
+# Nusantara Hardware
+JAVA_SOURCE_OVERLAYS := com.nusantara.keydisabler|$(VENDOR_PATH)/keydisabler|**/*.java
+
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := f2fs
