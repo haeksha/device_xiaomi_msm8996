@@ -52,6 +52,8 @@ BOARD_RAMDISK_USE_XZ := true
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8996
+KERNEL_TOOLCHAIN := $(PWD)/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-9.4/bin
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-elf-
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8996
