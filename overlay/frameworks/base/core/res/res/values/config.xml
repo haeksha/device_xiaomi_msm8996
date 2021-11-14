@@ -248,10 +248,10 @@
     </string-array>
 
     <!-- Should the pinner service pin the Camera application? -->
-    <bool name="config_pinnerCameraApp">true</bool>
+    <bool name="config_pinnerCameraApp">false</bool>
 
     <!-- Should the pinner service pin the Home application? -->
-    <bool name="config_pinnerHomeApp">true</bool>
+    <bool name="config_pinnerHomeApp">false</bool>
 
     <!-- List of files pinned by the Pinner Service with the JIT Zygote boot image b/119800099 -->
     <string-array translatable="false" name="config_jitzygoteBootImagePinnerServiceFiles">
@@ -335,4 +335,37 @@
     <!-- Whether to post reset runnable for all clients. Needed for some older
          vendor fingerprint HAL implementations. -->
     <bool name="config_fingerprintPostResetRunnableForAllClients">true</bool>
+
+    <!-- Whether the always on display mode is available. -->
+    <bool name="config_dozeAlwaysOnDisplayAvailable">true</bool>
+
+    <!--AlwaysOnDisplay disabled by default -->
+    <bool name="config_dozeAlwaysOnEnabled">false</bool>
+
+    <!-- Flag indicating whether the surface flinger is inefficient
+         at performing a blur.  Used by parts of the UI to turn off
+         the blur effect where it isn't worth the performance hit.
+         As of Honeycomb, blurring is not supported anymore. -->
+    <bool name="config_sf_slowBlur">false</bool>
+
+    <!-- Flag indicating whether the surface flinger has limited
+         alpha compositing functionality in hardware.  If set, the window
+         manager will disable alpha trasformation in animations where not
+         strictly needed. -->
+    <bool name="config_sf_limitedAlpha">true</bool>
+
+    <!-- Enables or disables fading edges when marquee is enabled in TextView.
+         Off by default, since the framebuffer readback used to implement the
+         fading edges is prohibitively expensive on most GPUs. -->
+    <bool name="config_ui_enableFadingMarquee">true</bool>
+
+     <!-- Does the battery LED support multiple colors?
+         Used to decide if the user can change the colors -->
+    <bool name="config_multiColorBatteryLed">true</bool>
+
+    <!-- Adaptive Charging -->
+    <bool name="config_adaptiveChargingAvailable">true</bool>
+    <string name="config_adaptiveChargingSysfsNode" translatable="false">/sys/class/power_supply/battery/charging_enabled</string>
+    <string name="config_adaptiveChargingSuspendValue" translatable="false">0</string>
+    <string name="config_adaptiveChargingResumeValue" translatable="false">1</string>
 </resources>
