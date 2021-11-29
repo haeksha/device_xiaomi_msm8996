@@ -36,11 +36,17 @@ function blob_fixup() {
     vendor/bin/imsrcsd)
         patchelf --add-needed "libbase_shim.so" "${2}"
         ;;
+    vendor/bin/slim_daemon)
+        patchelf --replace-needed "android.frameworks.sensorservice@1.0.so" "android.frameworks.sensorservice@1.0-v27.so" "${2}"
+        ;;
     vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so)
         patchelf --add-needed "libbase_shim.so" "${2}"
         ;;
     vendor/lib64/lib-uceservice.so)
         patchelf --add-needed "libbase_shim.so" "${2}"
+        ;;
+    vendor/lib64/vendor.qti.gnss@1.0_vendor.so)
+        patchelf --replace-needed "android.hardware.gnss@1.0.so" "android.hardware.gnss@1.0-v27.so" "${2}"
         ;;
     esac
 }
