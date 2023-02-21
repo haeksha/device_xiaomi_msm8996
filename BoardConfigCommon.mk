@@ -61,6 +61,10 @@ SDCLANG_PATH := $(PWD)/prebuilts/clang/host/linux-x86/sd_clang/bin
 SDCLANG_PATH_2 := $(PWD)/prebuilts/clang/host/linux-x86/sd_clang/bin
 SDCLANG_FLAGS := -Ofast -mcpu=cortex-a57 -mdefault-to-arm -Wno-vectorizer-no-neon -Wno-deprecated-register -Wno-tautological-type-limit-compare -Wno-unknown-warning-option
 SDCLANG_FLAGS_2 := -Ofast -mcpu=cortex-a57 -mdefault-to-arm -Wno-vectorizer-no-neon -Wno-deprecated-register -Wno-tautological-type-limit-compare -Wno-unknown-warning-option
+KERNEL_LLVM_SUPPORT := true
+TARGET_KERNEL_ADDITIONAL_FLAGS := \
+    LLVM=1 \
+    HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8996
